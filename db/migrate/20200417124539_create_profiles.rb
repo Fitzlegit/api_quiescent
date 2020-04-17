@@ -4,7 +4,7 @@ class CreateProfiles < ActiveRecord::Migration[6.0]
       t.string :name
       t.text :why
       t.string :meditations
-
+      t.references :user
       t.timestamps
     end
   end
