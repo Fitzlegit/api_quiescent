@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    profile = Profile.find_by(id: params[:id])
+    profile = Profile.all.find_by_id(params[:id])
     render json: profile
   end
 
@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    updateProfile = Profile.find_by(:id params[:id])
+    updateProfile = Profile.all.find_by_id(params[:id])
     updateProfile.update(profile_params)
     updateProfile.save
     render json: updateRecipe
@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :why, :meditations, :user_id)
+    params.require(:profile).permit(:fullname, :why, :meditations, :user_id)
   end
 
 

@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_04_17_124539) do
 
   create_table "profiles", force: :cascade do |t|
-    t.string "name"
+    t.string "fullname"
     t.text "why"
     t.string "meditations"
     t.integer "user_id"

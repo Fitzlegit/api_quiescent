@@ -1,25 +1,30 @@
 class UsersController < ApplicationController
 
   def index
-    user = User.all
+    users = User.all
     render json: users
   end
 
   def create
     user = User.new(user_params)
-    user.save
-    render json: user
+      if User.exists?(email: user.email)
+        user = User.all.find_by_email(user.email)
+        render json: user, :include => [:profile]
+      else
+        user.save
+        render json: user, :include => [:profile]
+      end
   end
 
   def show; end
 
-  def detroy
-    user = User.find_by(id: params[:id])
+  def destroy
+    user = User.all.find_by(id: params[:id])
     user.delete
   end
 
 
   def user_params
-    params.require(:user).permit(:email, :password_digest)
+    params.require(:user).permit(:email, :password)
   end
 end
