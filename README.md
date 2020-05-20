@@ -1,25 +1,15 @@
-# README
+# Quiescent API Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Quiescent API backend built on Rails 6
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+```
+bundle Install
+rails s
 
-* System dependencies
+```
 
-* Configuration
+## licenses
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# api_quiescent
+[MIT](https://choosealicense.com/licenses/mit/)
